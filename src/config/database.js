@@ -26,7 +26,7 @@ const pool = new Pool({
 // TESTAR CONEXÃO
 // ============================================================
 
-pool.connect((erro, client, release) => {
+pool.connect((erro, product, release) => {
   if (erro) {
     console.error('❌ Erro ao conectar ao PostgreSQL:', erro.message);
     console.error('💡 Verifique suas credenciais no arquivo .env');
@@ -49,7 +49,7 @@ const criarTabela = async () => {
       nome       VARCHAR(255)   NOT NULL,
       preco      DECIMAL(10,2)  NOT NULL,
       estoque    INTEGER        NOT NULL,
-      categoria  VARCHAR(100)   NOT NULL,
+      categoria  VARCHAR(100)   NOT NULL
     )
   `;
   

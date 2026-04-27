@@ -64,18 +64,6 @@ async function criar(req, res) {
       });
     }
     
-    if (parseFloat(preco) <= 0) {
-      return res.status(400).json({ 
-        mensagem: 'O preço deve ser maior que zero' 
-      });
-    }
-    
-    if (parseInt(estoque) < 0) {
-      return res.status(400).json({ 
-        mensagem: 'O estoque não pode ser negativo' 
-      });
-    }
-    
     const novoProduto = await ProdutoModel.criar({ 
       nome, 
       preco, 
